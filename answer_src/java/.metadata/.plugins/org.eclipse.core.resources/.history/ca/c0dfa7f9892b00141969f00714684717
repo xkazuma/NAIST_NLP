@@ -1,0 +1,5 @@
+package jp.blueman.zerozero_intro;
+
+public class WordCounter {
+
+}

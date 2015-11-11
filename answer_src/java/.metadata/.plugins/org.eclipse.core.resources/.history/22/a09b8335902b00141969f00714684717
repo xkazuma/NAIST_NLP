@@ -1,0 +1,16 @@
+package jp.blueman.zerozero_intro;
+
+import java.io.*;
+import java.util.Map;
+
+public class WordCounter {
+	
+	private Map< String, Integer > wordmap;
+	
+	public static void main( String[] args ) {
+		try {
+			FileReader txtfile = new FileReader( "../../" )
+		}
+	}
+	
+}

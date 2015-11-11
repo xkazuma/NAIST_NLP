@@ -1,0 +1,44 @@
+package jp.blueman.zerozero_intro;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+
+public class WordCounter {
+	
+	
+	
+	public static void main( String[] args ) {
+		String line;
+		String[] words;
+		BufferedReader txtfile;
+		HashMap< String, Integer > wordmap = new HashMap< String, Integer >(); 
+		try {
+			txtfile = new BufferedReader( new FileReader( "../../../nlptutorial/test/00-input.txt" ) );
+			while( ( line = txtfile.readLine() ) != null ) {
+				words = line.split(" ");
+				for( String str : words ) {
+					if( wordmap.get( str ) == null ) {
+						wordmap.put( str, 1 );
+					} else {
+						wordmap.put( str, wordmap.get( str ) + 1);
+					}
+				}
+			}
+			txtfile.close();
+		} catch( FileNotFoundException e ) {
+			System.out.println( e );
+		}	catch( IOException e) {
+			System.out.println( e );
+		} finally {
+			;
+		}
+		for( String str : wordmap.keySet() ) {
+			System.out.println( str + "\t" + wordmap.get( str ).toString() );
+		}
+		
+	}
+	
+}
